@@ -5,7 +5,7 @@
   --btn-bg: #333;
   --btn-hover: #f5c542;
   --btn-hover-text: #1a1a1a;
-  --btn-number: #3b82f6; /* Azul */
+  --btn-number: #3b82f6;   /* Azul */
   --btn-operator: #ec4899; /* Rosa */
 }
 
@@ -55,13 +55,14 @@ body {
   border: 2px solid var(--text-color);
 }
 
-/* ===== Botões ===== */
+/* ===== Botões (grid) ===== */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 70px);
   gap: 10px;
 }
 
+/* Estilo comum para todos os buttons */
 button {
   padding: 15px;
   font-size: 1.2em;
@@ -70,7 +71,7 @@ button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s;
 }
 
 /* Botões por tipo */
@@ -84,6 +85,7 @@ button.operator {
   color: white;
 }
 
+/* Hover (apenas uma definição, sem duplicação) */
 button:hover {
   background-color: var(--btn-hover);
   color: var(--btn-hover-text);
@@ -108,4 +110,3 @@ button:hover {
   color: var(--btn-hover-text);
   transform: scale(1.05);
 }
-
