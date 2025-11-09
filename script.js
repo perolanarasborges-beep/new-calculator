@@ -19,8 +19,10 @@ function calcular() {
     display.value = "Erro";
   }
   // Alterna entre modo claro e escuro
-function toggleTheme() {
+  {
+    function toggleTheme() 
   document.body.classList.toggle('light-mode');
 }
+
 
 
