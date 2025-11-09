@@ -18,4 +18,9 @@ function calcular() {
   } catch {
     display.value = "Erro";
   }
+  // Alterna entre modo claro e escuro
+function toggleTheme() {
+  document.body.classList.toggle('light-mode');
 }
+
+
