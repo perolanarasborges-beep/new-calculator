@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora da Pérola 💛</title>
-  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/833/833472.png">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora da Pérola ✨</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="calculadora">
-    <input type="text" id="display" disabled>
+  <h1>💛 Calculadora da Pérola 💛</h1>
 
-    <div class="botoes">
-      <button onclick="limpar()">C</button>
-      <button onclick="apagar()">←</button>
-      <button onclick="adicionar('%')">%</button>
-      <button onclick="adicionar('/')">÷</button>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="operator" onclick="clearDisplay()">C</button>
+      <button class="operator" onclick="deleteLast()">&larr;</button>
+      <button class="operator" onclick="appendToDisplay('%')">%</button>
+      <button class="operator" onclick="appendToDisplay('/')">÷</button>
 
-      <button onclick="adicionar('7')">7</button>
-      <button onclick="adicionar('8')">8</button>
-      <button onclick="adicionar('9')">9</button>
-      <button onclick="adicionar('*')">×</button>
+      <button class="number" onclick="appendToDisplay('7')">7</button>
+      <button class="number" onclick="appendToDisplay('8')">8</button>
+      <button class="number" onclick="appendToDisplay('9')">9</button>
+      <button class="operator" onclick="appendToDisplay('*')">×</button>
 
-      <button onclick="adicionar('4')">4</button>
-      <button onclick="adicionar('5')">5</button>
-      <button onclick="adicionar('6')">6</button>
-      <button onclick="adicionar('-')">−</button>
+      <button class="number" onclick="appendToDisplay('4')">4</button>
+      <button class="number" onclick="appendToDisplay('5')">5</button>
+      <button class="number" onclick="appendToDisplay('6')">6</button>
+      <button class="operator" onclick="appendToDisplay('-')">−</button>
 
-      <button onclick="adicionar('1')">1</button>
-      <button onclick="adicionar('2')">2</button>
-      <button onclick="adicionar('3')">3</button>
-      <button onclick="adicionar('+')">+</button>
+      <button class="number" onclick="appendToDisplay('1')">1</button>
+      <button class="number" onclick="appendToDisplay('2')">2</button>
+      <button class="number" onclick="appendToDisplay('3')">3</button>
+      <button class="operator" onclick="appendToDisplay('+')">+</button>
 
-      <button onclick="adicionar('0')">0</button>
-      <button onclick="adicionar('.')">.</button>
-      <button class="igual" onclick="calcular()">=</button>
+      <button class="number" onclick="appendToDisplay('0')">0</button>
+      <button class="number" onclick="appendToDisplay('.')">.</button>
+      <button class="operator" style="grid-column: span 2;" onclick="calculate()">=</button>
     </div>
   </div>
 
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Alternar Tema</button>
+
   <script src="script.js"></script>
-  <!-- Botão para mudar o tema -->
-<button class="theme-toggle" onclick="toggleTheme()">🌙 Alternar Tema</button>
 </body>
 </html>
-
 
