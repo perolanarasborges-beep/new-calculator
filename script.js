@@ -19,12 +19,20 @@ function deleteLast() {
 
 function calculate() {
   try {
-    const result = eval(display.innerText.replace("÷", "/").replace("×", "*"));
+    // Pega o texto do display e substitui símbolos
+    let expression = display.innerText
+      .replace("÷", "/")
+      .replace("×", "*")
+      .replace(/%/g, "/100"); // 👈 transforma % em /100
+
+    const result = eval(expression);
+
     display.innerText = result !== undefined ? result : "0";
   } catch {
     display.innerText = "Erro";
   }
 }
+
 
 // ============================
 // 🌗 Alternância de Tema
@@ -40,3 +48,4 @@ themeButton.addEventListener("click", () => {
     themeButton.innerText = "Modo Claro";
   }
 });
+
