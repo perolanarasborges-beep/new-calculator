@@ -19,20 +19,27 @@ function deleteLast() {
 
 function calculate() {
   try {
-    // Pega o texto do display e substitui símbolos
     let expression = display.innerText
-      .replace("÷", "/")
-      .replace("×", "*")
-      .replace(/%/g, "/100"); // 👈 transforma % em /100
+      .replace(/÷/g, "/")
+      .replace(/×/g, "*");
+
+    // 🔢 Detecta e ajusta porcentagens como calculadora real
+    if (expression.includes("%")) {
+      expression = expression.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
+
+      // Ajustes contextuais
+      expression = expression.replace(/(\d+(\.\d+)?)\s*\+\s*\((\d+(\.\d+)?\/100)\)/g, "($1 + $1*$3)");
+      expression = expression.replace(/(\d+(\.\d+)?)\s*-\s*\((\d+(\.\d+)?\/100)\)/g, "($1 - $1*$3)");
+      expression = expression.replace(/(\d+(\.\d+)?)\s*\*\s*\((\d+(\.\d+)?\/100)\)/g, "($1*$3)");
+      expression = expression.replace(/(\d+(\.\d+)?)\s*\/\s*\((\d+(\.\d+)?\/100)\)/g, "($1/($3))");
+    }
 
     const result = eval(expression);
-
-    display.innerText = result !== undefined ? result : "0";
+    display.innerText = result !== undefined ? parseFloat(result.toFixed(6)) : "0";
   } catch {
     display.innerText = "Erro";
   }
 }
-
 
 // ============================
 // 🌗 Alternância de Tema
@@ -48,4 +55,3 @@ themeButton.addEventListener("click", () => {
     themeButton.innerText = "Modo Claro";
   }
 });
-
