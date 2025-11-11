@@ -8,36 +8,36 @@
 </head>
 <body>
   <div class="calculator">
-    <div class="display" id="display">0</div>
+    <div id="display">0</div>
 
     <div class="buttons">
-      <button class="operator" onclick="clearDisplay()">C</button>
-      <button class="operator" onclick="deleteLast()">←</button>
-      <button class="operator" onclick="insert('%')">%</button>
-      <button class="operator" onclick="insert('/')">÷</button>
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="deleteLast()">⌫</button>
+      <button onclick="insert('%')">%</button>
+      <button onclick="insert('÷')">÷</button>
 
-      <button class="number" onclick="insert('7')">7</button>
-      <button class="number" onclick="insert('8')">8</button>
-      <button class="number" onclick="insert('9')">9</button>
-      <button class="operator" onclick="insert('*')">×</button>
+      <button onclick="insert('7')">7</button>
+      <button onclick="insert('8')">8</button>
+      <button onclick="insert('9')">9</button>
+      <button onclick="insert('×')">×</button>
 
-      <button class="number" onclick="insert('4')">4</button>
-      <button class="number" onclick="insert('5')">5</button>
-      <button class="number" onclick="insert('6')">6</button>
-      <button class="operator" onclick="insert('-')">−</button>
+      <button onclick="insert('4')">4</button>
+      <button onclick="insert('5')">5</button>
+      <button onclick="insert('6')">6</button>
+      <button onclick="insert('-')">-</button>
 
-      <button class="number" onclick="insert('1')">1</button>
-      <button class="number" onclick="insert('2')">2</button>
-      <button class="number" onclick="insert('3')">3</button>
-      <button class="operator" onclick="insert('+')">+</button>
+      <button onclick="insert('1')">1</button>
+      <button onclick="insert('2')">2</button>
+      <button onclick="insert('3')">3</button>
+      <button onclick="insert('+')">+</button>
 
-      <button class="number" onclick="insert('0')">0</button>
-      <button class="number" onclick="insert('.')">.</button>
-      <button class="operator" style="grid-column: span 2;" onclick="calculate()">=</button>
+      <button onclick="insert('0')" class="zero">0</button>
+      <button onclick="insert('.')">.</button>
+      <button class="equal" onclick="calculate()">=</button>
     </div>
-  </div>
 
-  <button class="theme-toggle" id="themeToggle">🌙 Alternar Tema</button>
+    <button id="themeToggle">Modo Claro</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
